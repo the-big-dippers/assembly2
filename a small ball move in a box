@@ -16,19 +16,17 @@
 <script>
     var box=document.querySelector("#box");
     var ball=document.querySelector("#ball");
-    var ang=Math.floor(Math.random()*360);
+    var ang=Math.floor(Math.random()*360);//一个随机角度
     var v=5;
-    var speedx=Math.cos(ang*Math.PI/90)*v;
-    var speedy=Math.sin(ang*Math.PI/90)*v;
-    console.log(ang);
-    console.log(speedx + ' '+speedy);
-    var wid=box.clientWidth;
+    var speedx=Math.cos(ang*Math.PI/90)*v;//x方向上的速度
+    var speedy=Math.sin(ang*Math.PI/90)*v;//y方向上的速度
+    var wid=box.clientWidth;//盒子的内宽高
     var he=box.clientHeight;
-    var widball=ball.offsetWidth;
+    var widball=ball.offsetWidth;//整个小球的宽高
     var heball=ball.offsetHeight;
     setInterval(move,10);
     function move(){
-        var px=ball.offsetLeft;
+        var px=ball.offsetLeft;//小球相对盒子的距离
         var py=ball.offsetTop;
         if(px<0 || px>wid-widball){
             speedx=-speedx;   
@@ -36,7 +34,7 @@
         if(py<0 || py>he-heball){
             speedy=-speedy;   
         }
-        px=px+speedx;
+        px=px+speedx;//计算小球一点一次之后的位置
         py=py+speedy;
         ball.style.left=px+'px';
         ball.style.top=py+'px';
