@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{width:500px;height:500px;border:1px solid red;position:relative;}
+        #ball{width:100px;height:100px;border-radius:50px;position:absolute;background:yellow;top:0;left:0;}
+    </style>
+</head>
+<body>
+<div id='box'>
+    <div id='ball'>
+    </div>
+</div>
+<script>
+    var box=document.querySelector("#box");
+    var ball=document.querySelector("#ball");
+    var ang=Math.floor(Math.random()*360);
+    var v=5;
+    var speedx=Math.cos(ang*Math.PI/90)*v;
+    var speedy=Math.sin(ang*Math.PI/90)*v;
+    console.log(ang);
+    console.log(speedx + ' '+speedy);
+    var wid=box.clientWidth;
+    var he=box.clientHeight;
+    var widball=ball.offsetWidth;
+    var heball=ball.offsetHeight;
+    setInterval(move,10);
+    function move(){
+        var px=ball.offsetLeft;
+        var py=ball.offsetTop;
+        if(px<0 || px>wid-widball){
+            speedx=-speedx;   
+        }
+        if(py<0 || py>he-heball){
+            speedy=-speedy;   
+        }
+        px=px+speedx;
+        py=py+speedy;
+        ball.style.left=px+'px';
+        ball.style.top=py+'px';
+    }
+</script>
+</body>
+</html>
