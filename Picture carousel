@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Carousel Figure</title>
+
+        <style>
+         *{
+        padding: 0;
+        margin: 0;
+    }
+    nav {
+        width: 720px;
+        height: 405px; /*设置可见部分的高度*/
+        margin: 40px auto;
+        border: 5px solid #eee;
+        overflow: hidden;
+    }
+    #img{
+        width: 720px;
+        height:2430px;/*设置可见部分的高度*/
+        position: relative;/*默认是static*/
+    }
+    #img li{
+        width: 720px;
+        height:405px;/*不设置则上下都会有2px的空白*/
+    }
+        </style>
+    </head>
+    <body>
+    </html>
